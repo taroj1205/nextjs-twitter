@@ -97,7 +97,7 @@ export const UserDetails = async ({ id }: { id: string }) => {
 							<Link
 								size="sm"
 								isExternal
-								href={`https://twitter.com/${data.userName}/verified_followers`}
+								href={`https://twitter.com/${data.userName}`}
 								color={"gray.500"}
 								mt={-1}>
 								@{data.userName}
@@ -118,7 +118,7 @@ export const UserDetails = async ({ id }: { id: string }) => {
 									<Link
 										color={["black", "white"]}
 										isExternal
-										href={`https://twitter.com/${data.userName}`}>
+										href={`https://twitter.com/${data.userName}/followers`}>
 										<span className="font-semibold">
 											{data.followersCount.toLocaleString()}
 										</span>{" "}
@@ -135,9 +135,9 @@ export const UserDetails = async ({ id }: { id: string }) => {
 			</CardBody>
 			<CardFooter>
 				<VStack gap={1}>
-					<Wrap gap={4}>
+					<Wrap gap={1}>
 						{data.location && (
-							<Text className="flex flex-row items-center">
+							<Text className="flex flex-row items-center mr-4">
 								<FaMapMarkerAlt className="mr-1" />
 								{/^http(s)?:\/\/[^\s]+$/.test(data.location) ? (
 									<Link href={data.location} isExternal>

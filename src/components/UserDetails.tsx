@@ -87,7 +87,7 @@ export const UserDetails = async ({ id }: { id: string }) => {
 			<CardHeader p={0}>
 				<VStack>
 					<ThumbnailImage src={data.profileBanner} alt={data.fullName} />
-          <ProfileImage src={data.profileImage} alt={data.fullName} />
+					<ProfileImage id={data.id} userName={data.userName} src={data.profileImage} alt={data.fullName} />
 					<HStack gap={3} ml={4}>
 						<VStack gap={1} align="start">
 							<Twemoji

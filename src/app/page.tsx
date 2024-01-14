@@ -1,5 +1,11 @@
 import { SearchProfile } from "@/components/SearchProfile";
 import { Box, Center, Heading, Text, VStack } from "@yamada-ui/react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "Twitter Profile Viewer",
+	description: "View your Twitter Profile",
+};
 
 const Page = () => {
 return (

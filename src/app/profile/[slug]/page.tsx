@@ -8,8 +8,24 @@ import {
 	Skeleton,
 	SkeletonCircle,
 } from "@yamada-ui/react";
+import { Metadata, ResolvingMetadata } from "next";
 import { Suspense } from "react";
 
+type Props = {
+	params: { slug: string };
+	searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export async function generateMetadata(
+	{ params }: Props,
+	parent: ResolvingMetadata
+): Promise<Metadata> {
+	const user = params.slug;
+	return {
+		title: `Twitter Profile Viewer | ${user}`,
+		description: "View your Twitter Profile",
+	};
+}
 export default function Profile({ params }: { params: { slug: string } }) {
 	return (
 		<>

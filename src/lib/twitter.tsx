@@ -1,4 +1,3 @@
-"use server";
 import { Rettiwt, Tweet, User } from "rettiwt-api";
 
 export const profile = async (id: string) => {

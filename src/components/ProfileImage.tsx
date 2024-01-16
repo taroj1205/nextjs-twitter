@@ -31,20 +31,15 @@ export const ProfileImage = ({
 	const { isOpen, onOpen, onClose } = useDisclosure();
 	return (
 		<>
-			<HStack>
 				<Image
 					onClick={onOpen}
 					width={100}
 					height={100}
-					src={src}
+					src={src.replaceAll("_normal", "")}
 					alt={alt}
 					cursor={"zoom-in"}
-					className="rounded-full border border-gray-300 data-[mode=dark]:border-gray-600 -mt-16 ml-4"
+					className="rounded-full border border-gray-300 data-[mode=dark]:border-gray-600"
 				/>
-				<Spacer />
-				<SendMessage id={id} />
-				<MoreButton id={id} userName={userName} />
-			</HStack>
 			<Modal isOpen={isOpen} onClose={onClose} size={"80%"}>
 				<ModalHeader>
 					<Twemoji className="emoji text-xl font-bold" text={alt} />

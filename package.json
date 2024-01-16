@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@yamada-ui/carousel": "^1.0.7",
     "@yamada-ui/react": "^1.1.5",
     "next": "14.0.4",
     "react": "^18",

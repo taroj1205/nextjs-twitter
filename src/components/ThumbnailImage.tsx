@@ -22,7 +22,7 @@ export const ThumbnailImage = ({ src, alt }: { src: string; alt: string }) => {
 				width={640}
 				src={src}
 				alt={alt}
-				className="rounded-t-md"
+				className="rounded-t-md cursor-zoom-in"
 			/>
 			<Modal isOpen={isOpen} onClose={onClose} size={"80%"}>
 				<ModalHeader>

@@ -1,16 +1,31 @@
-import { IconButton, Link, Menu, MenuButton, MenuDivider, MenuItem, MenuList, useClipboard } from "@yamada-ui/react";
+"use client";
+import {
+	IconButton,
+	Link,
+	Menu,
+	MenuButton,
+	MenuDivider,
+	MenuItem,
+	MenuList,
+	useClipboard,
+} from "@yamada-ui/react";
 import { BiShare } from "react-icons/bi";
 import { FaCheck, FaCopy } from "react-icons/fa";
 import { HiDotsVertical } from "react-icons/hi";
 import { LuMail } from "react-icons/lu";
 
-export const MoreButton = ({ userName, id }: { userName: string; id: string; }) => {
+export const MoreButton = ({
+	userName,
+	id,
+}: {
+	userName: string;
+	id: string;
+}) => {
 	const { onCopy, hasCopied } = useClipboard();
 	return (
 		<Menu>
 			<MenuButton
 				as={IconButton}
-				mt={-4}
 				mr={4}
 				icon={<HiDotsVertical />}
 				variant="outline"
@@ -22,7 +37,9 @@ export const MoreButton = ({ userName, id }: { userName: string; id: string; }) 
 					as={Link}
 					isExternal
 					href={
-						"https://twitter.com/messages/compose?recipient_id=" + id + "&text=Hi there!"
+						"https://twitter.com/messages/compose?recipient_id=" +
+						id +
+						"&text=Hi there!"
 					}>
 					Send DM
 				</MenuItem>

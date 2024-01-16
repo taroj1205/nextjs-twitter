@@ -30,7 +30,7 @@ export default function RootLayout({
 						nonce="testing"
 						initialColorMode="system"
 					/>
-					<Box className="min-h-svh">
+					<Box className="min-h-svh scroll-smooth">
 						<Settings />
 						{children}
 					</Box>

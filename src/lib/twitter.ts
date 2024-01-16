@@ -1,33 +1,41 @@
+'use server'
 import { Rettiwt, Tweet, User } from "rettiwt-api";
 
-export const profile = async (id: string) => {
-  const rettiwt = new Rettiwt();
+const rettiwt = new Rettiwt();
 
-  // Fetching the details of the user whose username is <username>
+export const userProfile = async (id: string) => {
   try {
     const details = (await rettiwt.user.details(id)) as User;
     if (details.profileImage) {
       details.profileImage = details.profileImage.replace('_normal', '');
     }
-    console.log(details);
     return details;
   } catch (error) {
-    console.log(error);
-    return error;
+    throw new Error(`Failed to fetch user profile: ${(error as Error).message}`);
   }
 };
 
-export const twitterTweet = async (id: string) => {
-	const rettiwt = new Rettiwt();
-
-	try {
+export const userTweet = async (id: string) => {
+  try {
     const tweet = (await rettiwt.tweet.details(id)) as Tweet;
     if (tweet.tweetBy.profileImage) {
       tweet.tweetBy.profileImage = tweet.tweetBy.profileImage.replace('_normal', '');
     }
-		return tweet;
-	} catch (error) {
-		console.log(error);
-		return error;
-	}
+    return tweet;
+  } catch (error) {
+    throw new Error(`Failed to fetch user tweet: ${(error as Error).message}`);
+  }
 };
+
+export const userTimeline = async (id: string) => {
+  try {
+    const timeline = await rettiwt.user.timeline(id);
+    if (timeline.list[0].tweetBy.profileImage) {
+      timeline.list[0].tweetBy.profileImage = timeline.list[0].tweetBy.profileImage.replace('_normal', '');
+    }
+    return timeline;
+  } catch (error) {
+    throw new Error(`Failed to fetch user timeline: ${(error as Error).message}`);
+  }
+};
+

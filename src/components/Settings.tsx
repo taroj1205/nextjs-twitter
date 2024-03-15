@@ -21,7 +21,7 @@ export const Settings = () => {
 	const { internalColorMode, changeColorMode } = useColorMode();
 	return (
 		<>
-			<Box className="fixed top-2 right-2">
+			<Box z={10} position="fixed" top={2} right={2}>
 				<IconButton icon={<FaCog />} onClick={onOpen} />
 			</Box>
 			<Modal isOpen={isOpen} onClose={onClose}>

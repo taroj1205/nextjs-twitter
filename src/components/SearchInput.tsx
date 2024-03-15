@@ -13,7 +13,6 @@ import {
 } from "@yamada-ui/react";
 import { useRouter } from "next/navigation";
 import { FaAt, FaSearch } from "react-icons/fa";
-import Link from "next/link";
 
 export const SearchInput = ({ id }: { id: string }) => {
 	const [inputValue, setInputValue] = useState(id);
@@ -51,7 +50,7 @@ export const SearchInput = ({ id }: { id: string }) => {
 	});
 
 	return (
-		<Box ref={formRef} className="fixed left-2 top-2 w-fit min-w-14">
+		<Box ref={formRef} z={10} position="fixed" left={2} top={2} className="w-fit min-w-14">
 			<IconButton
 				hidden={!hidden}
 				onClick={() => {

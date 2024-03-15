@@ -42,6 +42,8 @@ const TimelinePage = async ({ params }: { params: { slug: string } }) => {
 
 	const timeline = await userTimeline(id);
 
+	console.log(timeline.list.length)
+
 	const headerList = headers();
 
 	const lang = headerList.get("Accept-Language") || "en";
@@ -64,8 +66,8 @@ const TimelinePage = async ({ params }: { params: { slug: string } }) => {
 			</div>
 			<VStack my={5} p={2} mx={"auto"}>
 				<Suspense>
-					{timeline.list.map((tweet: Tweet) => (
-						<TweetCard key={tweet.id} tweet={tweet} lang={preferredLang} />
+					{timeline.list.slice(0, 20).map((tweet: Tweet) => (
+							<TweetCard key={tweet.id} tweet={tweet} lang={preferredLang} />
 					))}
 				</Suspense>
 			</VStack>

@@ -16,7 +16,7 @@
     "react-dom": "^18",
     "react-emoji-render": "^2.0.1",
     "react-icons": "^5.0.1",
-    "rettiwt-api": "^2.4.2"
+    "rettiwt-api": "^2.6.2"
   },
   "devDependencies": {
     "@types/node": "^20",

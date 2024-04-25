@@ -9,14 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/cookies": "^0.9.0",
     "@yamada-ui/carousel": "^1.0.7",
     "@yamada-ui/react": "^1.1.5",
+    "cookies": "^0.9.1",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
     "react-emoji-render": "^2.0.1",
     "react-icons": "^5.0.1",
-    "rettiwt-api": "^2.6.2"
+    "rettiwt-api": "^2.7.1"
   },
   "devDependencies": {
     "@types/node": "^20",
